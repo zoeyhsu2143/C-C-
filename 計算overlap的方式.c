@@ -1,5 +1,5 @@
 #define DIVSP(a,b) ((a)/(b))
-#define TICV_OBJECT_WINOVERLAP_NORM_VALUE (100)
+#define CV_OBJECT_WINOVERLAP_NORM_VALUE (100)
 
 static int32_t getWindowOverlapArea
 (
@@ -58,7 +58,7 @@ int32_t getWindowOverlapScore(sRect *rect1, sRect *rect2, uint8_t minDen)
   a2    = width2*height2;
   den   = minDen ? MIN(a1,a2):(a1 + a2 - ov); // minDen=0 ,den = (a1 + a2 -ov)
   rnd   = 0;
-  score = (int32_t)(den > 0)? DIVSP((ov * TICV_OBJECT_WINOVERLAP_NORM_VALUE + rnd) , den) : 0;  
+  score = (int32_t)(den > 0)? DIVSP((ov * CV_OBJECT_WINOVERLAP_NORM_VALUE + rnd) , den) : 0;  
 
   return score;
 }
